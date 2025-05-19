@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body id="body">
+    <div class="wrapper">
+        <header>
+            <div class="header-center">
+                <h1>📄 AI Text Summarizer</h1>
+            </div>
+            <div class="header-right">
+                <button onclick="toggleDarkMode()" class="toggle-btn">🌙</button>
+            </div>
+        </header>
+
+
+        <main>
+            <form method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+                <div class="input-section">
+                    <textarea id="inputTextArea" name="input_text" placeholder="Enter or paste your text here..." oninput="autoResize(this); updateCharCount();" rows="6">{{ input_text }}</textarea>
+                    <div class="info-bar">
+                        <span id="charCount">Characters: {{ input_len }}</span>
+                    </div>
+
+                    <label>📎 Or upload a PDF:</label>
+                    <input type="file" name="pdf_file" accept=".pdf">
+
+                    <div class="controls">
+                        <label>🧠 Summary Style:</label>
+                        <select name="summary_style">
+                            <option value="paragraph">Paragraph</option>
+                            <option value="bullets">Bullets</option>
+                            <option value="keywords">Keywords</option>
+                            <option value="headings">Subheadings</option>
+                        </select>
+
+                        <label>📏 Summary Length:</label>
+                        <select name="summary_length">
+                            <option value="short">Short</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="long">Long</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="gradient-button">Generate Summary</button>
+                </div>
+            </form>
+
+            <div id="loading" style="display:none;">
+                <div class="spinner"></div>
+                <p>Summarizing... Please wait...</p>
+            </div>
+
+            {% if summary %}
+            <div class="result">
+                <h2>📌 Summary:</h2>
+                <pre id="summaryText">{{ summary }}</pre>
+                <button onclick="copySummary()" class="copy-btn">📋 Copy</button>
+            </div>
+            {% endif %}
+        </main>
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        function autoResize(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        function updateCharCount() {
+            const len = document.getElementById("inputTextArea").value.length;
+            document.getElementById("charCount").innerText = "Characters: " + len;
+        }
+
+        function toggleDarkMode() {
+            document.getElementById('body').classList.toggle('dark-mode');
+        }
+
+        function copySummary() {
+            const text = document.getElementById('summaryText').innerText;
+            navigator.clipboard.writeText(text).then(() => alert('Summary copied!'));
+        }
+
+        document.addEventListener("DOMContentLoaded", updateCharCount);
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    color: #222;
+    transition: all 0.3s;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background: #6a5acd;
+    color: white;
+    position: relative;
+}
+
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.header-right {
+    margin-left: auto;
+}
+
+
+main {
+    flex: 1;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.input-section {
+    max-width: 1000px;
+    margin: auto;
+    background: #ffffff;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+textarea {
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.info-bar {
+    margin: 0.5em 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.controls {
+    margin-top: 1em;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+select {
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.gradient-button {
+    margin-top: 1.5em;
+    padding: 0.75em 2em;
+    background: linear-gradient(45deg, #6a5acd, #00bfff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.result {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2em;
+    background: #e9f7ef;
+    border-left: 5px solid #2ecc71;
+    border-radius: 12px;
+}
+
+pre {
+    white-space: pre-wrap;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.copy-btn {
+    margin-top: 1em;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 0.5em 1.5em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.toggle-btn {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.spinner {
+    margin: 20px auto;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #6a5acd;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #f8f8f8;
+}
