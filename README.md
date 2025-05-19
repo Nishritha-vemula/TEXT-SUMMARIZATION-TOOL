@@ -73,8 +73,8 @@ A web-based AI-powered text summarization tool built with **Flask**, **Transform
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/ai-text-summarizer.git
-cd ai-text-summarizer
+git clone https://github.com/Nishritha-vemula/TEXT-SUMMARIZATION-TOOL.git
+cd TEXT-SUMMARIZATION-TOOL
 ```
 
 ### 2. Install dependencies
