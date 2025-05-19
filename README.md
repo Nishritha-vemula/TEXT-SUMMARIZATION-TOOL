@@ -119,7 +119,7 @@ The app will open automatically in your browser: [http://127.0.0.1:5000](http://
 
 ##  Screenshots
 
-> *(Add screenshots of UI showing the text area, PDF upload, dropdowns, and summary output here)*
+> ![Image](https://github.com/user-attachments/assets/6b88
 
 ---
 
