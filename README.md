@@ -12,8 +12,7 @@
 
 "MENTOR" : NEELA SANTOSH 
 
-#  AI Text Summarizer
-
+# Description
 A web-based AI-powered text summarization tool built with **Flask**, **Transformers**, and **PyMuPDF** that allows users to generate concise summaries from **plain text** or **PDF files**. The application features a clean and responsive user interface, supports multiple summary styles, and includes advanced options for summary length control.
 
 ---
