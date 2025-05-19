@@ -119,7 +119,7 @@ The app will open automatically in your browser: [http://127.0.0.1:5000](http://
 
 ##  Screenshots
 
-> ![Image](https://github.com/user-attachments/assets/6b88
+![Image](https://github.com/user-attachments/assets/84fb69f6-f735-46a2-81ee-2ee6df7f985b)
 
 ---
 
